@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Tickets\TicketTypeController;
 use Illuminate\Support\Facades\Route;
 
 //auth
@@ -19,4 +20,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::resource('ticketTypes', TicketTypeController::class)->names('ticketTpye');
 });
