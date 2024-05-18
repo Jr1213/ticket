@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AccountController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Tickets\TicketController;
 use App\Http\Controllers\Tickets\TicketTypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('account', [AccountController::class, 'index'])->name('account.index');
     Route::match(['put', 'patch'], 'account', [AccountController::class, 'update'])->name('account.update');
-    Route::match(['put', 'patch'],'update-passowrd', [AccountController::class, 'password'])->name('password.update');
+    Route::match(['put', 'patch'], 'update-passowrd', [AccountController::class, 'password'])->name('password.update');
     Route::resource('ticketTypes', TicketTypeController::class)->names('ticketTpye');
+    Route::resource('tickets', TicketController::class)->names('ticket');
+    Route::get('createWizzerd/{type}',[TicketController::class,'wizzerd'])->name('ticket.wizzerd');
 });

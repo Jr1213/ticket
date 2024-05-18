@@ -12,11 +12,15 @@
                              class="hide-menu">Dashboard</span></a>
                  </li>
                  <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('ticketTpye.index') }}"
-                         aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                             class="hide-menu">ticket types
+                         aria-expanded="false"><i data-feather="settings" class="feather-icon"></i><span
+                             class="hide-menu">Ticket Types
                          </span></a>
                  </li>
-
+                 <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('ticket.index') }}"
+                    aria-expanded="false"><i data-feather="settings" class="feather-icon"></i><span
+                        class="hide-menu">Ticket
+                    </span></a>
+            </li>
              </ul>
          </nav>
          <!-- End Sidebar navigation -->
