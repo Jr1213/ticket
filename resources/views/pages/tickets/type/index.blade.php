@@ -3,7 +3,6 @@
     <!-- row -->
     <div class="row">
         {{-- @session('success') --}}
-        <x-alert.success />
         {{-- @session  --}}
         <div class="col-lg-12">
             <div class="card">

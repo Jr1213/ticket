@@ -12,5 +12,5 @@ class UserDto
     public readonly ?string $email;
     public readonly ?string $password;
     public readonly ?string $role;
-    public readonly ?string $imag;
+    public readonly ?string $image;
 }

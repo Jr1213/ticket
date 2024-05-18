@@ -51,6 +51,7 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                <x-alert.success />
 
                 @yield('content')
             </div>

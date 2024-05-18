@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AccountController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Tickets\TicketTypeController;
@@ -20,6 +21,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
+    Route::get('account', [AccountController::class, 'index'])->name('account.index');
+    Route::match(['put', 'patch'], 'account', [AccountController::class, 'update'])->name('account.update');
+    Route::match(['put', 'patch'],'update-passowrd', [AccountController::class, 'password'])->name('password.update');
     Route::resource('ticketTypes', TicketTypeController::class)->names('ticketTpye');
 });
