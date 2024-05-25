@@ -39,12 +39,20 @@
                                         <td>{{ $tiket->status }}</td>
                                         <td colspan="1">{{ $tiket->assgined?->name }}</td>
                                         <td colspan="1">
+                                            <div class="flex">
+                                                <a class="btn btn-warning mx-1 my-1 rounded-circle d-inline-block"
+                                                    href="{{ route('ticket.edit', ['ticket' => $tiket->id]) }}">
+                                                    <i class="far fa-edit"></i>
+                                                </a>
 
-                                            <a class="btn btn-info  rounded-circle d-block"
-                                                href="{{ route('ticket.edit', ['ticket' => $tiket->id]) }}">
-                                                <i class="far fa-edit"></i>
-                                            </a>
+                                                <a class="btn btn-primary mx-1 my-1 rounded-circle d-inline-block"
+                                                    href="{{ route('ticket.show', ['ticket' => $tiket->id]) }}">
+                                                    <i class="fa fa-comment-alt"></i>
+                                                </a>
+
+                                            </div>
                                             {{-- <form action="{{ route('ticketTpye.destroy', ['tickettiket' => $tiket->id]) }}"
+                  
                                                 method="POST">
                                                 @csrf
                                                 @method('delete')

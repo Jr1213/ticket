@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ticket extends Model
@@ -33,5 +34,10 @@ class Ticket extends Model
     public function type(): BelongsTo
     {
         return $this->belongsTo(TicketType::class, 'ticket_type_id');
+    }
+
+    public function tikcets(): HasMany
+    {
+        return $this->hasMany(Message::class, 'ticket_id');
     }
 }

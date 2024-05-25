@@ -27,5 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::match(['put', 'patch'], 'update-passowrd', [AccountController::class, 'password'])->name('password.update');
     Route::resource('ticketTypes', TicketTypeController::class)->names('ticketTpye');
     Route::resource('tickets', TicketController::class)->names('ticket');
-    Route::get('createWizzerd/{type}',[TicketController::class,'wizzerd'])->name('ticket.wizzerd');
+    Route::get('createWizzerd/{type}', [TicketController::class, 'wizzerd'])->name('ticket.wizzerd');
+    Route::post('{ticket}/messages', [TicketController::class, 'sendMessage'])->name('message.store');
 });
